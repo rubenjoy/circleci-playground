@@ -39,3 +39,7 @@ jobs:
           name: Create docker image
           command: |
             docker build -t coba:v1 --build-arg SECRET=$SECRET .
+      - run:
+          name: Run created image
+          command: |
+            docker run --rm --name coba coba:v1
